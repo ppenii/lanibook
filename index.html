@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>제주 새벽 책방 · 멤버 모집</title>
+<meta name="description" content="한 달에 한 권, 끝까지 읽는 사람들. 제주 새벽 책방 멤버를 모집합니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --paper:#fff5f8;
+  --paper-deep:#ffe6ef;
+  --ink:#3a2a31;
+  --muted:#85626f;
+  --green:#c2255c;
+  --green-soft:#e64980;
+  --line:#f6cddb;
+  --grad:linear-gradient(135deg,#ff8fb8 0%,#e8467f 55%,#b8245a 100%);
+  --grad-hover:linear-gradient(135deg,#ff7aab 0%,#d93272 55%,#a31c4e 100%);
+  --serif:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.8;word-break:keep-all;-webkit-text-size-adjust:100%}
+.wrap{max-width:640px;margin:0 auto;padding:0 24px}
+section{padding:88px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+h2{font-size:1.5rem;line-height:1.4;color:var(--green);margin-bottom:28px;font-weight:700}
+p+p{margin-top:1em}
+.btn{display:inline-block;background:var(--grad);color:#fff;text-decoration:none;font-family:inherit;font-size:1.05rem;font-weight:700;padding:16px 40px;border-radius:999px;box-shadow:0 8px 20px rgba(194,37,92,.28);transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{background:var(--grad-hover);transform:translateY(-2px);box-shadow:0 12px 26px rgba(194,37,92,.36)}
+.btn:active{transform:none}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+
+/* 첫 화면 */
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:72px 24px 0;position:relative;overflow:hidden}
+.hero .mark{font-size:2rem;margin-bottom:20px}
+.hero h1{font-size:clamp(2.6rem,11vw,4.2rem);line-height:1.2;color:var(--green);font-weight:800;letter-spacing:.04em}
+.hero .tag{margin:20px 0 36px;font-size:1.15rem;color:var(--ink)}
+.hero .note{margin-top:16px;font-size:.92rem;color:var(--muted)}
+.dawn{width:min(520px,130vw);aspect-ratio:2/1;margin-top:auto;border-radius:520px 520px 0 0;background:var(--grad);position:relative;flex-shrink:0}
+.dawn::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:46%;aspect-ratio:2/1;border-radius:999px 999px 0 0;background:var(--paper)}
+.hero-gap{height:56px}
+
+/* 모임 정보 */
+dl.facts{margin-top:36px;border-top:1px solid var(--line)}
+dl.facts div{display:flex;gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+dl.facts dt{flex:0 0 4.5em;color:var(--green);font-weight:700}
+dl.facts dd{flex:1}
+
+/* 이런 분 */
+ul.who{list-style:none}
+ul.who li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+ul.who li:first-child{padding-top:0}
+ul.who .e{font-size:1.4rem;line-height:1.7}
+
+/* 진행 방식 */
+ol.flow{list-style:none;position:relative;margin-left:8px;padding-left:32px;border-left:2px solid var(--green)}
+ol.flow li{position:relative;padding-bottom:32px}
+ol.flow li:last-child{padding-bottom:0}
+ol.flow li::before{content:"";position:absolute;left:-41px;top:.7em;width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--green)}
+ol.flow strong{display:block;color:var(--green);font-size:1.1rem}
+ol.flow span{color:var(--muted);font-size:.97rem}
+
+/* 책 */
+.book{background:var(--grad);color:#fff;border-radius:6px 20px 20px 6px;padding:40px 32px;display:flex;gap:24px;align-items:center;box-shadow:inset 10px 0 0 rgba(0,0,0,.18)}
+.book .cover{font-size:3rem;line-height:1}
+.book small{display:block;opacity:.8;font-size:.92rem}
+.book h3{font-size:1.4rem;line-height:1.45;margin:4px 0}
+.book p{font-size:.97rem;opacity:.9}
+
+/* 자주 묻는 질문 */
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:700;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--green);font-weight:400;transition:transform .25s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details .ans{padding:0 0 22px;color:var(--ink);animation:open .25s ease}
+@keyframes open{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+/* 마지막 */
+.final{text-align:center;background:var(--paper-deep)}
+.final h2{margin-bottom:16px}
+.final .sub{margin-bottom:32px;color:var(--muted)}
+footer{text-align:center;padding:28px 24px 40px;font-size:.88rem;color:var(--muted);background:var(--paper-deep)}
+
+@media (max-width:480px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .book{padding:32px 24px;flex-direction:column;align-items:flex-start;gap:12px}
+  dl.facts div{gap:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+#snow{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+</style>
+</head>
+<body>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<!-- 첫 화면 -->
+<header class="hero">
+  <div class="mark" aria-hidden="true">🌸</div>
+  <h1>제주 새벽 책방</h1>
+  <p class="tag">한 달에 한 권, 끝까지 읽는 사람들</p>
+  <a class="btn apply" href="#" target="_blank" rel="noopener noreferrer">모임 신청하기</a>
+  <p class="note">12월 10일까지 모집해요</p>
+  <div class="hero-gap"></div>
+  <div class="dawn" aria-hidden="true"></div>
+</header>
+
+<!-- 모임 소개 -->
+<section>
+  <div class="wrap">
+    <h2>📚 모임 소개</h2>
+    <p>제주 새벽 책방은 한 달에 한 권을 정해 끝까지 읽고, 둘째 주 토요일 아침에 모여 이야기를 나누는 독서모임이에요.</p>
+    <p>읽는 속도도 취향도 달라도 괜찮아요. 같은 책을 같은 달에 읽는 사람들이 있다는 것만으로 마지막 장까지 가는 힘이 생기니까요.</p>
+    <dl class="facts">
+      <div><dt>일시</dt><dd>매달 둘째 주 토요일 오전 10시</dd></div>
+      <div><dt>장소</dt><dd>제주시 <span data-fill="cafe">OO카페</span></dd></div>
+      <div><dt>정원</dt><dd>8명</dd></div>
+      <div><dt>회비</dt><dd>월 1만 원</dd></div>
+      <div><dt>마감</dt><dd>12월 10일</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 이런 분을 찾아요 -->
+<section>
+  <div class="wrap">
+    <h2>🔍 이런 분을 찾아요</h2>
+    <ul class="who">
+      <li><span class="e" aria-hidden="true">📖</span><span>읽다 만 책이 책장에 쌓여 있는 분</span></li>
+      <li><span class="e" aria-hidden="true">☕</span><span>혼자서는 끝까지 읽기 어려웠던 분</span></li>
+      <li><span class="e" aria-hidden="true">💬</span><span>다른 사람의 생각을 듣는 일이 즐거운 분</span></li>
+      <li><span class="e" aria-hidden="true">🌷</span><span>조용한 토요일 아침을 책으로 시작하고 싶은 분</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 진행 방식과 일정 -->
+<section>
+  <div class="wrap">
+    <h2>🗓️ 진행 방식과 일정</h2>
+    <ol class="flow">
+      <li><strong>혼자 읽기</strong><span>모임 전까지 그달의 책을 끝까지 읽어 와요.</span></li>
+      <li><strong>모여서 이야기하기</strong><span>둘째 주 토요일 오전 10시, 카페에 모여 책 이야기를 나눠요.</span></li>
+      <li><strong>다음 책 정하기</strong><span>모임이 끝나기 전에 다음 달 책을 함께 정해요.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 함께 읽을 책 -->
+<section>
+  <div class="wrap">
+    <h2>📕 함께 읽을 책</h2>
+    <div class="book">
+      <div class="cover" aria-hidden="true">📕</div>
+      <div>
+        <small>첫 달에 읽을 책</small>
+        <h3 data-fill="book">책 제목</h3>
+        <p>첫 모임 전까지 읽어 오시면 돼요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 자주 묻는 질문 -->
+<section>
+  <div class="wrap">
+    <h2>🙋 자주 묻는 질문</h2>
+    <div id="faq">
+      <details>
+        <summary>독서모임이 처음인데 괜찮을까요?</summary>
+        <div class="ans">그럼요. 책을 잘 읽는 사람보다 끝까지 읽어 오는 사람이 필요한 모임이에요. 느낀 점을 한두 문장으로 말해도 충분해요.</div>
+      </details>
+      <details>
+        <summary>책을 다 못 읽으면 참석할 수 없나요?</summary>
+        <div class="ans">끝까지 읽는 것이 이 모임의 약속이라 완독하고 오시길 권해요. 부득이하게 다 읽지 못했다면 읽은 데까지 함께 이야기해도 좋아요.</div>
+      </details>
+      <details>
+        <summary>회비는 얼마이고, 언제 내나요?</summary>
+        <div class="ans">회비는 월 1만 원이에요. 납부 방법과 시기는 신청하신 분께 따로 안내해 드려요.</div>
+      </details>
+      <details>
+        <summary>정원이 차면 어떻게 되나요?</summary>
+        <div class="ans">정원은 8명이에요. 마감일인 12월 10일 전에 정원이 차면 모집을 일찍 닫을 수 있어요. 마음이 있다면 서둘러 신청해 주세요.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 마지막 신청 안내 -->
+<section class="final">
+  <div class="wrap">
+    <h2>💗 함께 읽어요</h2>
+    <p class="sub">12월 10일까지, 8명을 모십니다.<br>신청서를 보내주시면 참가 안내를 드릴게요.</p>
+    <a class="btn apply" href="#" target="_blank" rel="noopener noreferrer">모임 신청하기</a>
+  </div>
+</section>
+
+<footer>제주 새벽 책방</footer>
+
+<script>
+  // ▼ 여기만 고치면 페이지 전체에 반영돼요
+  var CONFIG = {
+    formUrl: "https://docs.google.com/forms/d/1DeHG3_ph9YIXkztyZa60ugTrp5IRlBYxAbxoukXBgBg/viewform",
+    cafe: "OO카페",
+    book: "책 제목"
+  };
+
+  document.querySelectorAll("a.apply").forEach(function (a) {
+    a.href = CONFIG.formUrl;
+  });
+  document.querySelectorAll('[data-fill="cafe"]').forEach(function (el) { el.textContent = CONFIG.cafe; });
+  document.querySelectorAll('[data-fill="book"]').forEach(function (el) { el.textContent = CONFIG.book; });
+
+  // 질문은 한 번에 하나만 펼치기
+  var items = document.querySelectorAll("#faq details");
+  items.forEach(function (d) {
+    d.addEventListener("toggle", function () {
+      if (d.open) items.forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
+
+  // 눈 내리기 (움직임 줄이기 설정을 켠 기기에서는 나오지 않아요)
+  (function () {
+    var cv = document.getElementById("snow");
+    if (!cv || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { if (cv) cv.remove(); return; }
+    var ctx = cv.getContext("2d");
+    var w, h, dpr, flakes = [];
+
+    function size() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = window.innerWidth; h = window.innerHeight;
+      cv.width = w * dpr; cv.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.round(Math.min(110, Math.max(40, w / 11)));
+      while (flakes.length < n) flakes.push(make(true));
+      flakes.length = n;
+    }
+    function make(randomY) {
+      var r = Math.random() * 2.6 + 1.2;
+      return {
+        x: Math.random() * w,
+        y: randomY ? Math.random() * h : -10,
+        r: r,
+        v: r * 0.35 + 0.5,
+        a: Math.random() * Math.PI * 2,
+        s: Math.random() * 0.012 + 0.004,
+        d: Math.random() * 0.8 + 0.4
+      };
+    }
+    function tick() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "rgba(255,255,255,0.95)";
+      ctx.shadowColor = "rgba(232,70,127,0.45)";
+      ctx.shadowBlur = 4;
+      for (var i = 0; i < flakes.length; i++) {
+        var f = flakes[i];
+        f.a += f.s;
+        f.y += f.v;
+        f.x += Math.sin(f.a) * f.d;
+        if (f.y > h + 10) { flakes[i] = make(false); continue; }
+        if (f.x > w + 10) f.x = -10; else if (f.x < -10) f.x = w + 10;
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    }
+    size();
+    window.addEventListener("resize", size);
+    requestAnimationFrame(tick);
+  })();
+</script>
+</body>
+</html>
